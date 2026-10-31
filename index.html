@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="calm-teal">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A calm, offline-first paycheck and monthly budget planner. No bank connection, no account, no tracking.">
+  <title>ADHD Planner &mdash; calm paycheck budgeting</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="demo-banner" class="demo-banner" hidden></div>
+
+  <div class="mobile-bar">
+    <button id="menu-btn" class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <span class="mobile-title" id="mobile-title">ADHD Planner</span>
+    <button id="mobile-track-btn" class="icon-btn" type="button" aria-label="Track spending" data-change>
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </button>
+  </div>
+
+  <div id="nav-drawer" class="nav-drawer" hidden>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="drawer-head">
+        <strong>Menu</strong>
+        <button id="drawer-close" class="icon-btn" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <nav id="drawer-nav" class="main-nav" aria-label="Mobile navigation"></nav>
+      <button id="drawer-track" class="btn btn-primary" type="button" data-change>+ Track spending</button>
+      <p class="sidebar-foot">Your data stays in this browser on this device. Nothing is sent anywhere.</p>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18V9M12 18V5M19 18v-6"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong id="brand-name">ADHD Planner</strong>
+          <small>calm money, one step at a time</small>
+        </span>
+      </div>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
+      <button id="track-spending-btn" class="btn btn-primary track-btn" type="button" data-change>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span>Track spending</span>
+      </button>
+      <div class="sidebar-foot">Your data stays in this browser on this device. Nothing is sent anywhere.</div>
+    </aside>
+
+    <main id="main-content" class="main" tabindex="-1">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="view-eyebrow">Your month</p>
+          <h1 id="view-title">Home</h1>
+        </div>
+        <div class="topbar-actions" id="topbar-actions"></div>
+      </header>
+      <div id="status-region" class="status-region" role="status" aria-live="polite"></div>
+
+      <section id="view-setup" class="view" hidden></section>
+      <section id="view-home" class="view" hidden></section>
+      <section id="view-today" class="view" hidden></section>
+      <section id="view-calendar" class="view" hidden></section>
+      <section id="view-goals" class="view" hidden></section>
+      <section id="view-savings" class="view" hidden></section>
+      <section id="view-debt" class="view" hidden></section>
+      <section id="view-envelopes" class="view" hidden></section>
+      <section id="view-settings" class="view" hidden></section>
+    </main>
+  </div>
+
+  <button id="fab-track" class="fab" type="button" aria-label="Track spending" data-change>
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    <span>Track</span>
+  </button>
+
+  <div id="modal-root"></div>
+  <div id="print-area" aria-hidden="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
